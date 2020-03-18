@@ -1,4 +1,4 @@
-import "dotenv";
+import "dotenv/config";
 
 const { MONGODB_URI, PORT } = process.env;
 
