@@ -65,7 +65,8 @@ const DatePickerDay: React.FC<Props> = ({ day, currentMonth, currentYear }) => {
     } else {
       setEvents(getEventsPayload.events);
     }
-  }, [getEventsPayload.events, getLiveEventsPayload]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [getEventsPayload.events.length]);
 
   const onSubmit = (values: any) => {
     if (EditableEventId) {
@@ -135,7 +136,7 @@ const DatePickerDay: React.FC<Props> = ({ day, currentMonth, currentYear }) => {
           style={{
             background:
               getEventsPayload.events.length ||
-              getLiveEventsPayload?.events.length
+                getLiveEventsPayload?.events.length
                 ? "yellow"
                 : "transparent"
           }}
